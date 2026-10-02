@@ -1,0 +1,178 @@
+config:
+  validation: true
+  warningsAsErrors: false
+  checkExhaustiveness: false
+  excludes: []
+
+processors:
+  active: true
+
+console-reports:
+  active: true
+  exclude:
+    - 'ProjectStatisticsReport'
+    - 'NotificationReport'
+    - 'IssuesReport'
+
+# Deliberately small starting ruleset. Expand as the codebase stabilises.
+
+coroutines:
+  active: true
+  GlobalCoroutineUsage:
+    active: true
+  InjectDispatcher:
+    active: true
+  RedundantSuspendModifier:
+    active: true
+  SuspendFunWithCoroutineScopeReceiver:
+    active: true
+
+empty-blocks:
+  active: true
+  EmptyFunctionBlock:
+    active: true
+  EmptyClassBlock:
+    active: true
+
+exceptions:
+  active: true
+  InstanceOfCheckForException:
+    active: true
+  NotImplementedDeclaration:
+    active: true
+  ObjectExtendsThrowable:
+    active: true
+  PrintStackTrace:
+    active: true
+  RethrowCaughtException:
+    active: true
+  ReturnFromFinally:
+    active: true
+  SwallowedException:
+    active: true
+  ThrowingExceptionFromFinally:
+    active: true
+  ThrowingExceptionInMain:
+    active: true
+  ThrowingExceptionsWithoutMessageOrCause:
+    active: true
+  ThrowingNewInstanceOfSameException:
+    active: true
+
+naming:
+  active: true
+  BooleanPropertyNaming:
+    active: true
+  ClassNaming:
+    active: true
+  ConstructorParameterNaming:
+    active: true
+  EnumNaming:
+    active: true
+  FunctionNaming:
+    active: true
+    # @Composable functions follow Compose's PascalCase convention.
+    ignoreAnnotated: ['Composable']
+    # Descriptive backticked test names are idiomatic and clearer than camelCase here.
+    excludes:
+      - '**/test/**'
+      - '**/androidTest/**'
+  MatchingDeclarationName:
+    active: true
+  ObjectPropertyNaming:
+    active: true
+  TopLevelPropertyNaming:
+    active: true
+  VariableNaming:
+    active: true
+
+potential-bugs:
+  active: true
+  CastToNullableType:
+    active: true
+  Deprecation:
+    active: false
+  DontDowncastCollectionTypes:
+    active: true
+  DoubleMutabilityForCollection:
+    active: true
+  ElseCaseInsteadOfExhaustiveWhen:
+    active: true
+  EqualsAlwaysReturnsTrueOrFalse:
+    active: true
+  ExitOutsideMain:
+    active: true
+  ExplicitGarbageCollectionCall:
+    active: true
+  HasPlatformType:
+    active: true
+  IgnoredReturnValue:
+    active: true
+  ImplicitDefaultLocale:
+    active: true
+  ImplicitUnitReturnType:
+    active: true
+  InvalidRange:
+    active: true
+  IteratorHasNextCallsNextMethod:
+    active: true
+  IteratorNotThrowingNoSuchElementException:
+    active: true
+  LateinitUsage:
+    active: false
+  MapGetWithNotNullAssertionOperator:
+    active: true
+  MissingPackageDeclaration:
+    active: false
+  NullCheckOnMutableProperty:
+    active: true
+  NullableToStringCall:
+    active: true
+  UnconditionalJumpStatementInLoop:
+    active: true
+  UnnecessaryNotNullCheck:
+    active: true
+  UnnecessaryNotNullOperator:
+    active: true
+  UnnecessarySafeCall:
+    active: true
+  UnreachableCatchBlock:
+    active: true
+  UnreachableCode:
+    active: true
+  UnsafeCallOnNullableType:
+    active: true
+  UnsafeCast:
+    active: true
+  UnusedUnaryOperator:
+    active: true
+  UselessPostfixExpression:
+    active: true
+  WrongEqualsTypeParameter:
+    active: true
+
+style:
+  active: true
+  MagicNumber:
+    active: false
+  MaxLineLength:
+    active: true
+    maxLineLength: 120
+  ReturnCount:
+    active: true
+    max: 4
+  UnusedImport:
+    active: true
+  UnusedPrivateClass:
+    active: true
+  UnusedPrivateFunction:
+    active: true
+  UnusedPrivateProperty:
+    active: true
+  UnusedParameter:
+    active: false
+  WildcardImport:
+    active: true
+    excludeImports:
+      - 'java.util.*'
+      - 'kotlinx.android.synthetic.*'

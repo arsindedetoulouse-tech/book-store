@@ -21,3 +21,11 @@ dependencyResolutionManagement {
 
 rootProject.name = "Old Boob Store"
 include(":app")
+include(":core:designsystem")
+include(":core:model")
+include(":core:navigation")
+include(":core:network")
+include(":feature:booklist")
+
+// Convention plugins: shared build configuration declared once, applied per module.
+includeBuild("build-logic")
