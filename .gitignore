@@ -1,6 +1,9 @@
 # Gradle files
 .gradle/
 build/
+.aiforopenide/
+docs/
+.opencode/
 
 # Local configuration file (sdk path, etc)
 local.properties
